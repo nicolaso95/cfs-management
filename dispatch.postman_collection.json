@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "05e11e29-4719-4fc1-9218-a8a9f692ba23",
+		"name": "dispatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createCFS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiZjAxODNhMmEtNWIzMi0xMWViLTliNjItOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzYwNzk1LCJpYXQiOjE2MTExNTU5OTUsImp0aSI6ImYwMTg2ZTcwLTViMzItMTFlYi05YjYyLTk4M2I4ZmFmMmMyZSJ9.JQ1p1-9rjM_715fAHFyRIGooDnRsxvNBv_CW-DNcH8a8ENfX_V08clSnDu4_6PcWtAaX-e_-GFqsx6mnaOZapw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"eventNumber\": \"3234020\",\n   \"eventTypeCode\": \"SMO\",\n   \"responder\": \"OFFICER_001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/dispatch",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dispatch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCFS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiZjAxODNhMmEtNWIzMi0xMWViLTliNjItOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzYwNzk1LCJpYXQiOjE2MTExNTU5OTUsImp0aSI6ImYwMTg2ZTcwLTViMzItMTFlYi05YjYyLTk4M2I4ZmFmMmMyZSJ9.JQ1p1-9rjM_715fAHFyRIGooDnRsxvNBv_CW-DNcH8a8ENfX_V08clSnDu4_6PcWtAaX-e_-GFqsx6mnaOZapw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"responder\": \"OFFICER_002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/dispatch/:eventId",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dispatch",
+						":eventId"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": "87ebd9ed-fe18-4585-a87d-2a919608bac1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCFSByResponder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiY2Q1ODQyMzgtNWIyZS0xMWViLTliNjItOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzU5MDE2LCJpYXQiOjE2MTExNTQyMTYsImp0aSI6ImNkNTg5NzFkLTViMmUtMTFlYi05YjYyLTk4M2I4ZmFmMmMyZSJ9.5eIu9EEiZOqBTTgVlrXF7UlzZCOlNI78gHmwYNlp0oTFdhYIB984wHPsC4-m57itOZgfKCswO8qlhslzyRKWaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/dispatch/:responder?page=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dispatch",
+						":responder"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					],
+					"variable": [
+						{
+							"key": "responder",
+							"value": "OFFICER_001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCFSInRangeTime",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiOWJhMGIxZDYtNWFkNy0xMWViLTgxNTYtOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzIxNTc1LCJpYXQiOjE2MTExMTY3NzUsImp0aSI6IjliYTBmNDVmLTVhZDctMTFlYi04MTU2LTk4M2I4ZmFmMmMyZSJ9.PhOuf_piIRP6HpQ6ZZeGSJeM7LN58Nz8W3L9P6g6Gk78dRxXLum2XGla39C6NBTFh-CQflWYRS-U9WYNDlePeg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/dispatch?page=0&limit=10&startTime=2021-01-20 04:20:42.275&endTime=2021-01-21 04:32:42.275",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dispatch"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "startTime",
+							"value": "2021-01-20 04:20:42.275"
+						},
+						{
+							"key": "endTime",
+							"value": "2021-01-21 04:32:42.275"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCFS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiZjAxODNhMmEtNWIzMi0xMWViLTliNjItOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzYwNzk1LCJpYXQiOjE2MTExNTU5OTUsImp0aSI6ImYwMTg2ZTcwLTViMzItMTFlYi05YjYyLTk4M2I4ZmFmMmMyZSJ9.JQ1p1-9rjM_715fAHFyRIGooDnRsxvNBv_CW-DNcH8a8ENfX_V08clSnDu4_6PcWtAaX-e_-GFqsx6mnaOZapw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/dispatch/:eventId",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"dispatch",
+						":eventId"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": "21450313-4850-4850-8d72-4e6dc3a29b3d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dispatcher1\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getResponder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXNwYXRjaGVyMSIsImFnZW5jeUlkIjoiY2Q1ODQyMzgtNWIyZS0xMWViLTliNjItOTgzYjhmYWYyYzJlIiwiZXhwIjoxNjExNzU5MDE2LCJpYXQiOjE2MTExNTQyMTYsImp0aSI6ImNkNTg5NzFkLTViMmUtMTFlYi05YjYyLTk4M2I4ZmFmMmMyZSJ9.5eIu9EEiZOqBTTgVlrXF7UlzZCOlNI78gHmwYNlp0oTFdhYIB984wHPsC4-m57itOZgfKCswO8qlhslzyRKWaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/user/responder",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"responder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
