@@ -9,4 +9,4 @@ GRANT ALL PRIVILEGES ON test.* TO 'test'@'%'; <br />
 Run project: gradle bootrun <br />
 4. Test API <br />
 Using swagger: http://127.0.0.1:8080/swagger-ui.html#/ <br />
-Using postman <br />
+Using postman: dispatch.postman_collection.json <br />
