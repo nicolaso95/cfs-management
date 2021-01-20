@@ -1,7 +1,7 @@
 # cfs-management
-1. Clone project: https://github.com/nicolaso95/cfs-management.git 
-2. Install mysql server: https://dev.mysql.com/downloads/mysql/ 
-In mysql shell, execute commands to create database table and user 
+1. Clone project: https://github.com/nicolaso95/cfs-management.git  <br />
+2. Install mysql server: https://dev.mysql.com/downloads/mysql/ <br />
+In mysql shell, execute commands to create database table and user <br />
 CREATE DATABASE IF NOT EXISTS test; 
 CREATE USER IF NOT EXISTS 'test'@'%' IDENTIFIED BY '123456'; 
 GRANT ALL PRIVILEGES ON test.* TO 'test'@'%'; 
